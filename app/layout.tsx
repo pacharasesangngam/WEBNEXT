@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import "./fix-border-radius.css" // เพิ่มบรรทัดนี้
 import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({
