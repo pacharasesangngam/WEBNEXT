@@ -14,11 +14,6 @@ export const contentType = "image/png"
 
 // Image generation
 export default async function Image() {
-  // Font
-  const interSemiBold = fetch(
-    new URL("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap", import.meta.url),
-  ).then((res) => res.arrayBuffer())
-
   return new ImageResponse(
     // ImageResponse JSX element
     <div
@@ -32,6 +27,7 @@ export default async function Image() {
         alignItems: "center",
         justifyContent: "center",
         color: "white",
+        fontFamily: "sans-serif", // Using system font instead of custom font
       }}
     >
       <div style={{ fontSize: "80px", fontWeight: "bold" }}>Pachara</div>
@@ -39,8 +35,6 @@ export default async function Image() {
     </div>,
     // ImageResponse options
     {
-      // For convenience, we can re-use the exported opengraph-image
-      // size config to also set the ImageResponse width and height.
       ...size,
     },
   )

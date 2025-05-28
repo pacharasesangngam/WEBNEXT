@@ -25,14 +25,13 @@ export default function Icon() {
         justifyContent: "center",
         color: "white",
         borderRadius: "8px",
+        fontFamily: "sans-serif",
       }}
     >
       <div style={{ color: "#3B82F6", fontWeight: "bold" }}>P</div>
     </div>,
     // ImageResponse options
     {
-      // For convenience, we can re-use the exported opengraph-image
-      // size config to also set the ImageResponse width and height.
       ...size,
     },
   )
