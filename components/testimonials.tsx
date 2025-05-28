@@ -73,7 +73,10 @@ export default function Certificates() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 h-full">
+              <Card
+                className="bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 h-full"
+                style={{ borderRadius: "0.75rem" }}
+              >
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-16 h-16 bg-white/10 rounded-lg flex items-center justify-center">

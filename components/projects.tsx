@@ -105,7 +105,10 @@ export default function Projects() {
               viewport={{ once: true }}
               className={project.featured ? "lg:col-span-1" : "lg:col-span-1"}
             >
-              <Card className="bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 group overflow-hidden h-full">
+              <Card
+                className="bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 group overflow-hidden h-full"
+                style={{ borderRadius: "0.75rem" }}
+              >
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image || "/placeholder.svg"}

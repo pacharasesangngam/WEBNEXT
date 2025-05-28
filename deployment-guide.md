@@ -57,7 +57,6 @@ npm run build
 - `components/projects.tsx` - Your real projects
 - `components/about.tsx` - Your education and background
 - `README.md` - Update with your project info
-\`\`\`
 
 เสร็จแล้วครับ! 🎉
 
