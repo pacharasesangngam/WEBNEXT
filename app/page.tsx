@@ -5,9 +5,7 @@ import Projects from "@/components/projects"
 import Certificates from "@/components/testimonials"
 import Footer from "@/components/footer"
 import { SparklesCore } from "@/components/sparkles"
-import { NAVIGATION_ITEMS, PERSONAL_INFO } from "@/lib/constants"
 import Navbar from "@/components/navbar"
-
 
 export default function Home() {
   return (
@@ -26,26 +24,7 @@ export default function Home() {
       </div>
 
       <div className="relative z-10">
-        <Navbar
-          NAVIGATION_ITEMS={NAVIGATION_ITEMS}
-          PERSONAL_INFO={PERSONAL_INFO}
-          downloadResume={() => window.open("/resume.pdf", "_blank")}
-          openEmail={(email, subject) => {
-            const mailtoLink = `mailto:${email}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`
-            window.open(mailtoLink, "_blank")
-          }}
-          handleNavClick={(e, href) => {
-            e.preventDefault()
-            const elementId = href.replace("#", "")
-            const element = document.getElementById(elementId)
-            if (element) {
-              element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
-          }}
-        />
+        <Navbar />
         <Hero />
         <About />
         <Skills />
