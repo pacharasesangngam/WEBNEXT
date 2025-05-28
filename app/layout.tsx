@@ -10,7 +10,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Your Name - Portfolio",
+  title: "Pachara - Portfolio",
   description: "Full-Stack Developer Portfolio",
   generator: "v0.dev",
 }
