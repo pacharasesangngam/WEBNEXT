@@ -4,7 +4,7 @@
 
 โปรเจคนี้ต้องมีโฟลเดอร์ต่อไปนี้:
 
-\`\`\`bash
+```bash
 portfolio-website/
 ├── public/
 │   ├── images/           # เก็บรูปภาพโปรเจค
@@ -24,7 +24,7 @@ portfolio-website/
 ├── components/           # React Components
 ├── app/                  # Next.js App Router
 └── ...
-\`\`\`
+
 
 ## 📦 วิธีเตรียมไฟล์ ZIP สำหรับดาวน์โหลด
 
