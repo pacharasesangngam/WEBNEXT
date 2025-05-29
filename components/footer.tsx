@@ -154,7 +154,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col space-y-2">
               {/* Email copy/mailto */}
-              <CopyOrMailtoEmail />
+      
 
               {/* โทรศัพท์ */}
               <a
