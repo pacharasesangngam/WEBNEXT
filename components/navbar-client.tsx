@@ -40,29 +40,52 @@ export default function NavbarClient() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="flex items-center justify-between px-6 py-4 backdrop-blur-sm border-b border-white/10"
+        className="relative flex items-center px-6 py-4 backdrop-blur-sm border-b border-white/10"
       >
-        <Link href="/" className="flex items-center gap-2">
+        {/* Logo (Left) */}
+        <Link href="/" className="flex items-center gap-2 z-10">
           <User className="w-6 h-6 text-white" />
           <span className="font-bold text-white">{PERSONAL_INFO.name}</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+        {/* Navigation (Center) */}
+        <div
+          className="
+            hidden md:flex items-center gap-8
+            absolute left-1/2 -translate-x-1/2
+          "
+        >
           {NAVIGATION_ITEMS.map((item) => (
             <button
               key={item.name}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-gray-300 hover:text-white transition-colors"
+              className="
+                text-gray-300 hover:text-white transition-colors font-medium
+                bg-transparent border-0 p-0 m-0
+              "
+              style={{ background: "transparent" }}
             >
-              {item.name}
+              <span
+                className="
+                  text-lg
+                  relative inline-block
+                  after:content-[''] after:block after:h-[2px] after:bg-white
+                  after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300
+                  after:origin-left after:rounded-full after:mt-0 after:w-full
+                "
+              >
+                {item.name}
+              </span>
             </button>
+
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
+        {/* Right: Resume & Hire Me */}
+        <div className="hidden md:flex items-center gap-4 ml-auto z-10">
           <Button
             variant="ghost"
-            className="text-white hover:text-white hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all duration-300"
+            className="text-white hover:text-black bg-transparent hover:bg-white border border-white/20 hover:border-white/40 transition-all duration-300"
             onClick={downloadResume}
           >
             <Download className="w-4 h-4 mr-2" />
@@ -76,10 +99,11 @@ export default function NavbarClient() {
           </Button>
         </div>
 
+        {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden text-white"
+          className="md:hidden text-white ml-auto"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -101,7 +125,14 @@ export default function NavbarClient() {
                 <button
                   key={item.name}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-gray-300 hover:text-white transition-colors text-left py-2"
+                  className="
+                    text-gray-300 hover:text-white transition-colors font-medium
+                    relative
+                    after:content-[''] after:inline-block after:h-[2px] after:w-full after:bg-white
+                    after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300
+                    after:origin-left after:rounded-full after:mt-1 after:mx-auto
+                    px-0 py-1 w-full text-left
+                  "
                 >
                   {item.name}
                 </button>
@@ -109,7 +140,7 @@ export default function NavbarClient() {
               <div className="pt-4 border-t border-white/10 space-y-3">
                 <Button
                   variant="ghost"
-                  className="w-full text-white hover:text-white hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all duration-300"
+                  className="w-full text-white hover:text-black bg-transparent hover:bg-white border border-white/20 hover:border-white/40 transition-all duration-300"
                   onClick={downloadResume}
                 >
                   <Download className="w-4 h-4 mr-2" />

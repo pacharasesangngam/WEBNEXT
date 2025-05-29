@@ -204,8 +204,12 @@ export default function Projects() {
           <Button
             size="lg"
             variant="ghost"
-            className="text-white hover:bg-white/10 border border-white/20"
-            onClick={() => openLink("https://github.com/yourusername")}
+            className="
+              bg-white text-black border border-white/20
+              hover:bg-gray-100 hover:text-black
+              transition-all duration-200
+            "
+            onClick={() => openLink("https://github.com/pacharasesangngam")}
           >
             <Github className="w-5 h-5 mr-2" />
             View All Projects on GitHub
