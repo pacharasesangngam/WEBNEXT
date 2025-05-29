@@ -75,15 +75,6 @@ export default function Hero() {
           >
             <ResumeDownloadDialog buttonSize="lg" buttonText="Download Resume" />
 
-            <Button
-              size="lg"
-              variant="ghost"
-              className="text-white hover:bg-white/10 hover:text-white px-8 py-4 text-lg transition-all duration-300 border border-white/20 hover:border-white/40"
-              onClick={() => openEmail(PERSONAL_INFO.email, "Let's work together!")}
-            >
-              <Mail className="mr-2 h-6 w-6" />
-              Contact Me
-            </Button>
           </motion.div>
 
           {/* Social Links */}
