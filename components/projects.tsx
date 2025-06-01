@@ -12,24 +12,24 @@ const openLink = (url: string) => {
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Cookie Tool",
       description:
-        "A full-stack e-commerce solution with user authentication, payment integration, and admin dashboard.",
-      image: "/images/ecommerce-project.png",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+        "โปรเเกรมเเยกคุกกีั Roblox เขียนด้วย Python เอาไว้ใช้เเยก user:password:cookie ออกมาเป็น 2 ไฟล์ 1.ไฟล์ user:password 2.ไฟล์ cookie โปรเเกรมสามารถดาวโหลดได้เป็นไฟล์.exe ",
+      image: "/images/cookiepro.png",
+      technologies: ["Python"],
       liveUrl: "https://your-ecommerce-demo.vercel.app",
-      githubUrl: "https://github.com/yourusername/ecommerce-platform",
+      githubUrl: "https://github.com/pacharasesangngam/cookie_splitter",
       downloadUrl: "/downloads/ecommerce-platform.zip",
-      icon: Globe,
+      icon: Code,
       featured: true,
-      complexity: 5,
-      duration: "3 months",
+      complexity: 2,
+      duration: "2 วัน",
       teamSize: 1,
     },
     {
-      title: "Task Management App",
+      title: "BOT ขายของ DISCORD",
       description:
-        "A collaborative task management application with real-time updates and team collaboration features.",
+        "เป็น BOT ที่สามารถเติมเงิน เช็คช้อมูล ซื้อไอดี ดูประวัติต่างๆได้ สามารถเติมเงินด้วยซองอังเปา การทำงานในการเติมเงินจะเปิดหน้าเว็บเเล้วใส่เบอร์ให้ออโต",
       image: "/images/task-management.png",
       technologies: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
       liveUrl: "https://your-taskapp-demo.vercel.app",
@@ -113,7 +113,7 @@ export default function Projects() {
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-25 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 right-4">
                     <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
@@ -121,8 +121,8 @@ export default function Projects() {
                     </div>
                   </div>
                   {project.featured && (
-                    <div className="absolute top-4 left-4">
-                      <div className="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1">
+                    <div className="absolute top-5 left-4">
+                      <div className="bg-black/50 backdrop-blur-sm rounded-lg px-1 py-1">
                         <span className="text-white text-sm font-medium">Featured</span>
                       </div>
                     </div>
