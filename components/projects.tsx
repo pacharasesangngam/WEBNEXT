@@ -19,7 +19,7 @@ export default function Projects() {
       technologies: ["Python"],
       liveUrl: "https://your-ecommerce-demo.vercel.app",
       githubUrl: "https://github.com/pacharasesangngam/cookie_splitter",
-      downloadUrl: "/downloads/ecommerce-platform.zip",
+      downloadUrl: "/downloads/cookie_tool.zip",
       icon: Code,
       featured: true,
       complexity: 2,

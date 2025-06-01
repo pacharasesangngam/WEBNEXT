@@ -85,10 +85,7 @@ export default function About() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Brain className="w-5 h-5 text-violet-400" /> Machine Learning
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Smartphone className="w-5 h-5 text-green-300" /> Mobile App Development
-                  </li>
+                  </li>            
                 </ul>
               </motion.div>
             </div>
