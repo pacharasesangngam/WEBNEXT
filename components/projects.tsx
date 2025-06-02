@@ -30,7 +30,7 @@ export default function Projects() {
       title: "BOT ขายของ DISCORD",
       description:
         "เป็น BOT ที่สามารถเติมเงิน เช็คช้อมูล ซื้อไอดี ดูประวัติต่างๆได้ สามารถเติมเงินด้วยซองอังเปา การทำงานในการเติมเงินจะเปิดหน้าเว็บเเล้วใส่เบอร์ให้ออโต",
-      image: "/images/discord-bot.png", // ต้องเป็นขนาด 940x400 px
+      image: "/images/discordshop.png",
       technologies: ["Discord.js", "Node.js", "MongoDB"],
       liveUrl: "https://your-taskapp-demo.vercel.app",
       githubUrl: "https://github.com/yourusername/task-management",
@@ -42,23 +42,23 @@ export default function Projects() {
       teamSize: 1,
     },
     {
-      title: "Weather Mobile App",
-      description: "A cross-platform mobile app providing weather forecasts with location-based services.",
-      image: "/images/weather-app.png", // ต้องเป็นขนาด 940x400 px
-      technologies: ["React Native", "Expo", "Weather API", "Redux"],
+      title: "Roblox Shop Website ",
+      description: "เว็บไซต์ขายไอเท็มจากในเกม มีฟังก์ชันหลัก ได้แก่ เข้าสู่ระบบ/สมัครสมาชิก เพิ่ม/ลบรายการสินค้า ตระกร้าสินค้า เติมเงิน ชำระเงิน และประวัติการซื้อขาย",
+      image: "/images/robloxshop.png",
+      technologies: ["React", "Node.js", "Html", "Css", "Js"],
       liveUrl: "https://expo.dev/@yourusername/weather-app",
       githubUrl: "https://github.com/yourusername/weather-app",
       downloadUrl: "/downloads/weather-app.zip",
       icon: Smartphone,
       featured: false,
-      complexity: 3,
+      complexity: 5,
       duration: "1 month",
-      teamSize: 1,
+      teamSize: 3,
     },
     {
       title: "Data Visualization Dashboard",
       description: "An interactive dashboard for visualizing complex datasets with charts and real-time analytics.",
-      image: "/images/data-dashboard.png", // ต้องเป็นขนาด 940x400 px
+      image: "/images/data-dashboard.png",
       technologies: ["Vue.js", "D3.js", "Python", "FastAPI"],
       liveUrl: "https://your-dashboard-demo.vercel.app",
       githubUrl: "https://github.com/yourusername/data-dashboard",
@@ -82,25 +82,22 @@ export default function Projects() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            Featured Projects
+            Projects
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-gray-300 text-xl max-w-3xl mx-auto"
-          >
-            Here are some of my recent projects. Rate them based on complexity, design, and functionality!
+            viewport={{ once: true }}>
           </motion.p>
         </div>
 
         {/* คำแนะนำสำหรับขนาดภาพ */}
-        <div className="mb-8 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+        {/* <div className="mb-8 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
           <p className="text-blue-300 text-sm text-center">
             📸 <strong>ข้อกำหนดภาพ:</strong> ภาพทุกรูปต้องมีขนาด <strong>940 x 400 พิกเซล</strong> เท่านั้น เพื่อให้การแสดงผลสม่ำเสมอ
           </p>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (

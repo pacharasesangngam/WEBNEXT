@@ -28,9 +28,9 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">My Skills</h2>
-          <p className="text-gray-300 text-xl max-w-3xl mx-auto">
+          {/* <p className="text-gray-300 text-xl max-w-3xl mx-auto">
             Technical expertise I've developed through years of practice and real-world projects
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
