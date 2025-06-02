@@ -31,7 +31,7 @@ export default function Projects() {
       description:
         "เป็น BOT ที่สามารถเติมเงิน เช็คช้อมูล ซื้อไอดี ดูประวัติต่างๆได้ สามารถเติมเงินด้วยซองอังเปา การทำงานในการเติมเงินจะเปิดหน้าเว็บเเล้วใส่เบอร์ให้ออโต",
       image: "/images/discordshop.png",
-      technologies: ["Discord.js", "Node.js", "MongoDB"],
+      technologies: ["Python","Discord.js", "Node.js", "MongoDB"],
       liveUrl: "https://your-taskapp-demo.vercel.app",
       githubUrl: "https://github.com/yourusername/task-management",
       downloadUrl: "/downloads/task-management.zip",
@@ -44,7 +44,8 @@ export default function Projects() {
     {
       title: "Roblox Shop Website ",
       description: "เว็บไซต์ขายไอเท็มจากในเกม มีฟังก์ชันหลัก ได้แก่ เข้าสู่ระบบ/สมัครสมาชิก เพิ่ม/ลบรายการสินค้า ตระกร้าสินค้า เติมเงิน ชำระเงิน และประวัติการซื้อขาย",
-      image: "/images/robloxshop.png",
+      mediaType: "video",
+      mediaUrl: "/videos/RobloxVid.mp4",
       technologies: ["React", "Node.js", "Html", "Css", "Js"],
       liveUrl: "https://expo.dev/@yourusername/weather-app",
       githubUrl: "https://github.com/yourusername/weather-app",
@@ -116,19 +117,31 @@ export default function Projects() {
                 <div className="relative overflow-hidden">
                   {/* Fixed aspect ratio container for 940x400 (2.35:1) */}
                   <div className="relative w-full" style={{ aspectRatio: "940/400" }}>
-                    <img
-                      src={project.image || "/placeholder.svg?height=400&width=940&text=940x400"}
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      style={{
-                        minHeight: "100%",
-                        minWidth: "100%",
-                      }}
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement
-                        target.src = "/placeholder.svg?height=400&width=940&text=940x400+Required"
-                      }}
-                    />
+                    {project.mediaType === "video" ? (
+                        <video
+                          src={project.mediaUrl}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                        />
+                      ) : (
+                        <img
+                          src={project.image || "/placeholder.svg?height=400&width=940&text=940x400"}
+                          alt={project.title}
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          style={{
+                            minHeight: "100%",
+                            minWidth: "100%",
+                          }}
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement
+                            target.src = "/placeholder.svg?height=400&width=940&text=940x400+Required"
+                          }}
+                        />
+                      )}
+
 
                     {/* Overlay สำหรับตรวจสอบขนาดภาพ */}
                     <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">

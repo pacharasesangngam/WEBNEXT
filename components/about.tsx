@@ -51,14 +51,14 @@ export default function About() {
                   <BookOpen className="w-6 h-6 text-teal-300" />
                   <h3 className="text-2xl font-semibold text-white">Education</h3>
                 </div>
+                <p className="text-gray-300 mb-2"> <strong>• 2023-Present</strong></p>
                 <p className="text-gray-300 mb-2">
                   <strong>Bangkok university</strong>
                 </p>
-                <p className="text-gray-300 mb-2"> <strong>• 2023-Present</strong></p>
                 <p className="text-gray-400 mb-4">Technology and Innovation faculty Major of Computer Science</p>
-                <p className="text-gray-300">
+                {/* <p className="text-gray-300">
                   Hands-on experience with Node.js, React, Python, UX/UI design.
-                </p>
+                </p> */}
               </motion.div>
 
               {/* Interests Card */}

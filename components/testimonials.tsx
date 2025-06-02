@@ -7,33 +7,28 @@ import { Button } from "@/components/ui/button"
 
 export default function Certificates() {
   const certificates = [
-    {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "December 2023",
-      expiry: "December 2026",
-      credentialId: "AWS-123456",
+     {
+      name: "Oracle Certified Foundations Associate I",
+      issuer: "Oracle Fusion Cloud Applications ERP Certified Foundations Associate",
+      date: "May 2025",
       logo: "/placeholder.svg?height=60&width=60",
-      certificateUrl: "#",
+      certificateUrl: "/certificates/eCertificate3.pdf",
     },
     {
-      name: "Microsoft Certified: Azure Developer Associate",
-      issuer: "Microsoft",
-      date: "August 2023",
-      expiry: "August 2025",
-      credentialId: "MS-789012",
+      name: "Certified Of Completion",
+      issuer: "Oracle Cloud Success Navigator Essentials",
+      date: "May 2025",
       logo: "/placeholder.svg?height=60&width=60",
-      certificateUrl: "#",
+      certificateUrl: "/certificates/eCertificate1.pdf",
     },
     {
-      name: "Google Professional Cloud Developer",
-      issuer: "Google Cloud",
-      date: "March 2023",
-      expiry: "March 2025",
-      credentialId: "GCP-345678",
+      name: "Oracle Certified Foundations Associate II",
+      issuer: "Oracle Fusion Cloud Applications HCM Certified Foundations Associate",
+      date: "May 2025",
       logo: "/placeholder.svg?height=60&width=60",
-      certificateUrl: "#",
+      certificateUrl: "/certificates/eCertificate2.pdf",
     },
+   
   ]
 
   const openCertificate = (url: string) => {
@@ -51,9 +46,9 @@ export default function Certificates() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            Professional Certificates
+            Certificates
           </motion.h2>
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -61,7 +56,7 @@ export default function Certificates() {
             className="text-gray-300 text-xl max-w-3xl mx-auto"
           >
             Industry-recognized certifications that validate my technical expertise
-          </motion.p>
+          </motion.p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -92,16 +87,7 @@ export default function Certificates() {
                       <Calendar className="w-4 h-4 mr-2 text-gray-400" />
                       <span>Issued: {certificate.date}</span>
                     </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <FileCheck className="w-4 h-4 mr-2 text-gray-400" />
-                      <span>Expires: {certificate.expiry}</span>
-                    </div>
-                    <div className="flex items-center text-gray-300 text-sm">
-                      <CheckCircle className="w-4 h-4 mr-2 text-gray-400" />
-                      <span>Credential ID: {certificate.credentialId}</span>
-                    </div>
                   </div>
-
                   <Button
                     className="w-full bg-white hover:bg-gray-200 text-black"
                     onClick={() => openCertificate(certificate.certificateUrl)}
