@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Code, Database, Smartphone, Globe, Users, Clock, Download } from "lucide-react"
+import { ExternalLink, Github, Code, Database, Smartphone, Users, Clock, Download } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -15,7 +15,7 @@ export default function Projects() {
       title: "Cookie Tool",
       description:
         "โปรเเกรมเเยกคุกกีั Roblox เขียนด้วย Python เอาไว้ใช้เเยก user:password:cookie ออกมาเป็น 2 ไฟล์ 1.ไฟล์ user:password 2.ไฟล์ cookie โปรเเกรมสามารถดาวโหลดได้เป็นไฟล์.exe ",
-      image: "/images/cookiepro.png",
+      image: "/images/cookietool.png", // ต้องเป็นขนาด 940x400 px
       technologies: ["Python"],
       liveUrl: "https://your-ecommerce-demo.vercel.app",
       githubUrl: "https://github.com/pacharasesangngam/cookie_splitter",
@@ -30,21 +30,21 @@ export default function Projects() {
       title: "BOT ขายของ DISCORD",
       description:
         "เป็น BOT ที่สามารถเติมเงิน เช็คช้อมูล ซื้อไอดี ดูประวัติต่างๆได้ สามารถเติมเงินด้วยซองอังเปา การทำงานในการเติมเงินจะเปิดหน้าเว็บเเล้วใส่เบอร์ให้ออโต",
-      image: "/images/task-management.png",
-      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
+      image: "/images/discord-bot.png", // ต้องเป็นขนาด 940x400 px
+      technologies: ["Discord.js", "Node.js", "MongoDB"],
       liveUrl: "https://your-taskapp-demo.vercel.app",
       githubUrl: "https://github.com/yourusername/task-management",
       downloadUrl: "/downloads/task-management.zip",
       icon: Code,
       featured: true,
       complexity: 4,
-      duration: "2 months",
-      teamSize: 2,
+      duration: "1 เดือน",
+      teamSize: 1,
     },
     {
       title: "Weather Mobile App",
       description: "A cross-platform mobile app providing weather forecasts with location-based services.",
-      image: "/images/weather-app.png",
+      image: "/images/weather-app.png", // ต้องเป็นขนาด 940x400 px
       technologies: ["React Native", "Expo", "Weather API", "Redux"],
       liveUrl: "https://expo.dev/@yourusername/weather-app",
       githubUrl: "https://github.com/yourusername/weather-app",
@@ -58,7 +58,7 @@ export default function Projects() {
     {
       title: "Data Visualization Dashboard",
       description: "An interactive dashboard for visualizing complex datasets with charts and real-time analytics.",
-      image: "/images/data-dashboard.png",
+      image: "/images/data-dashboard.png", // ต้องเป็นขนาด 940x400 px
       technologies: ["Vue.js", "D3.js", "Python", "FastAPI"],
       liveUrl: "https://your-dashboard-demo.vercel.app",
       githubUrl: "https://github.com/yourusername/data-dashboard",
@@ -95,6 +95,13 @@ export default function Projects() {
           </motion.p>
         </div>
 
+        {/* คำแนะนำสำหรับขนาดภาพ */}
+        <div className="mb-8 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+          <p className="text-blue-300 text-sm text-center">
+            📸 <strong>ข้อกำหนดภาพ:</strong> ภาพทุกรูปต้องมีขนาด <strong>940 x 400 พิกเซล</strong> เท่านั้น เพื่อให้การแสดงผลสม่ำเสมอ
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -110,19 +117,38 @@ export default function Projects() {
                 style={{ borderRadius: "0.75rem" }}
               >
                 <div className="relative overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  {/* Fixed aspect ratio container for 940x400 (2.35:1) */}
+                  <div className="relative w-full" style={{ aspectRatio: "940/400" }}>
+                    <img
+                      src={project.image || "/placeholder.svg?height=400&width=940&text=940x400"}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      style={{
+                        minHeight: "100%",
+                        minWidth: "100%",
+                      }}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.src = "/placeholder.svg?height=400&width=940&text=940x400+Required"
+                      }}
+                    />
+
+                    {/* Overlay สำหรับตรวจสอบขนาดภาพ */}
+                    <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <div className="bg-black/70 backdrop-blur-sm rounded px-2 py-1">
+                        <span className="text-white text-xs">940×400</span>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="absolute top-4 right-4">
                     <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                       <project.icon className="w-5 h-5 text-white" />
                     </div>
                   </div>
                   {project.featured && (
-                    <div className="absolute top-5 left-4">
-                      <div className="bg-black/50 backdrop-blur-sm rounded-lg px-1 py-1">
+                    <div className="absolute top-4 left-4">
+                      <div className="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1">
                         <span className="text-white text-sm font-medium">Featured</span>
                       </div>
                     </div>
