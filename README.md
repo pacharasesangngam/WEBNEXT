@@ -20,6 +20,7 @@
 ```bash
 git clone https://github.com/pacharasesangngam/WEBNEXT.git
 cd WEBNEXT
+npm install-g pnpm   # ต้องติดตั้งก่อน [สำหรับคนที่ยังไม่ได้ติดตั้ง]
 pnpm install         # หรือใช้ npm install
 ```
 

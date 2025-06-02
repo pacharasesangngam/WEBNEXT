@@ -10,27 +10,31 @@ const openLink = (url: string) => {
 }
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Cookie Tool",
-      description:
-        "โปรเเกรมเเยกคุกกีั Roblox เขียนด้วย Python เอาไว้ใช้เเยก user:password:cookie ออกมาเป็น 2 ไฟล์ 1.ไฟล์ user:password 2.ไฟล์ cookie โปรเเกรมสามารถดาวโหลดได้เป็นไฟล์.exe ",
-      image: "/images/cookietool.png", // ต้องเป็นขนาด 940x400 px
-      technologies: ["Python"],
-      liveUrl: "https://your-ecommerce-demo.vercel.app",
-      githubUrl: "https://github.com/pacharasesangngam/cookie_splitter",
-      downloadUrl: "/downloads/cookie_tool.zip",
-      icon: Code,
-      featured: true,
-      complexity: 2,
-      duration: "2 วัน",
-      teamSize: 1,
-    },
+const projects = [
+  {
+    title: "Cookie Tool",
+    description: (
+      <>
+        โปรแกรมแยกคุกกี้ Roblox เขียนด้วย Python เอาไว้ใช้แยก user:password:cookie ออกมาเป็น 2 ไฟล์ 1.ไฟล์ user:password 2.ไฟล์ cookie{" "}
+        <span className="font-bold text-yellow-400">วิธีใช้ดูที่ github</span>
+      </>
+    ),
+    image: "/images/cookietool.png", // ต้องเป็นขนาด 940x400 px
+    technologies: ["Python"],
+    liveUrl: "https://your-ecommerce-demo.vercel.app",
+    githubUrl: "https://github.com/pacharasesangngam/cookie_splitter",
+    downloadUrl: "/downloads/cookie_tool.zip",
+    icon: Code,
+    featured: true,
+    complexity: 2,
+    duration: "2 วัน",
+    teamSize: 1,
+  },
     {
       title: "BOT ขายของ DISCORD",
       description:
         "เป็น BOT ที่สามารถเติมเงิน เช็คช้อมูล ซื้อไอดี ดูประวัติต่างๆได้ สามารถเติมเงินด้วยซองอังเปา การทำงานในการเติมเงินจะเปิดหน้าเว็บเเล้วใส่เบอร์ให้ออโต",
-      image: "/images/discord-bot.png", // ต้องเป็นขนาด 940x400 px
+      image: "/images/discordshop.png", // ต้องเป็นขนาด 940x400 px
       technologies: ["Discord.js", "Node.js", "MongoDB"],
       liveUrl: "https://your-taskapp-demo.vercel.app",
       githubUrl: "https://github.com/yourusername/task-management",
@@ -94,14 +98,6 @@ export default function Projects() {
             Here are some of my recent projects. Rate them based on complexity, design, and functionality!
           </motion.p>
         </div>
-
-        {/* คำแนะนำสำหรับขนาดภาพ */}
-        <div className="mb-8 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-          <p className="text-blue-300 text-sm text-center">
-            📸 <strong>ข้อกำหนดภาพ:</strong> ภาพทุกรูปต้องมีขนาด <strong>940 x 400 พิกเซล</strong> เท่านั้น เพื่อให้การแสดงผลสม่ำเสมอ
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
