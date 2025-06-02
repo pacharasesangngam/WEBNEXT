@@ -1,4 +1,3 @@
-
 # WEBNEXT - คู่มือการใช้งานแบบเต็มระบบ
 
 ## 1. ภาพรวมโปรเจกต์
@@ -17,24 +16,25 @@
 
 ### 2.2 ขั้นตอนติดตั้ง
 
-```bash
+\`\`\`bash
 git clone https://github.com/pacharasesangngam/WEBNEXT.git
 cd WEBNEXT
+npm install-g pnpm   # ต้องติดตั้งก่อน [สำหรับคนที่ยังไม่ได้ติดตั้ง]
 pnpm install         # หรือใช้ npm install
-```
+\`\`\`
 
 ### 2.3 เริ่มต้นเซิร์ฟเวอร์สำหรับพัฒนา
 
-```bash
+\`\`\`bash
 pnpm dev
-```
+\`\`\`
 - เปิดเบราว์เซอร์ที่ [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## 3. โครงสร้างโปรเจกต์
 
-```
+\`\`\`
 WEBNEXT/
 │
 ├─ app/              # หน้าเพจและ Routing
@@ -46,7 +46,7 @@ WEBNEXT/
 ├─ .env.local        # Environment Variables (สร้างเองถ้าต้องการ)
 ├─ package.json
 └─ README.md
-```
+\`\`\`
 
 ---
 
@@ -82,19 +82,19 @@ WEBNEXT/
 
 - สร้างไฟล์ `.env.local` ใน root directory (สำหรับเก็บ API key หรือ config ต่าง ๆ)
 - ตัวอย่าง:
-  ```
+  \`\`\`
   NEXT_PUBLIC_API_URL=https://api.example.com
-  ```
+  \`\`\`
 - เรียกใช้ในโค้ดได้ด้วย `process.env.NEXT_PUBLIC_API_URL`
 
 ---
 
 ## 8. การ Build สำหรับ Production
 
-```bash
+\`\`\`bash
 pnpm build
 pnpm start
-```
+\`\`\`
 - เปิด production server ที่ [http://localhost:3000](http://localhost:3000) (ค่าเริ่มต้น)
 
 ---
@@ -109,10 +109,10 @@ pnpm start
 
 ### 9.2 Deploy แบบ Static (GitHub Pages ฯลฯ)
 
-```bash
+\`\`\`bash
 pnpm build
 pnpm export
-```
+\`\`\`
 - ไฟล์ static อยู่ในโฟลเดอร์ `out/` พร้อมอัปโหลด
 
 ### 9.3 Deploy บน Server เอง
@@ -127,9 +127,9 @@ pnpm export
 - **Dependency conflict**  
   ใช้ `pnpm install --force` หรือ `pnpm install --legacy-peer-deps`
 - **เปลี่ยนพอร์ต**
-  ```
+  \`\`\`
   pnpm dev -- --port=8080
-  ```
+  \`\`\`
 - **Hot reload ไม่ทำงาน**  
   ปิดและรัน `pnpm dev` ใหม่
 
@@ -137,13 +137,13 @@ pnpm export
 
 ## 11. คำสั่งที่ใช้บ่อย
 
-```bash
+\`\`\`bash
 pnpm dev         # โหมดพัฒนา (localhost)
 pnpm build       # สร้าง production build
 pnpm start       # รัน production server
 pnpm export      # สร้าง static site (ใช้กับ GitHub Pages)
 pnpm lint        # ตรวจสอบโค้ด
-```
+\`\`\`
 
 ---
 
@@ -152,4 +152,3 @@ pnpm lint        # ตรวจสอบโค้ด
 - GitHub: [pacharasesangngam](https://github.com/pacharasesangngam)
 
 ---
-

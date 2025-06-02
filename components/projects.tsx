@@ -15,7 +15,7 @@ export default function Projects() {
       title: "Cookie Tool",
       description:
         "โปรเเกรมเเยกคุกกีั Roblox เขียนด้วย Python เอาไว้ใช้เเยก user:password:cookie ออกมาเป็น 2 ไฟล์ 1.ไฟล์ user:password 2.ไฟล์ cookie โปรเเกรมสามารถดาวโหลดได้เป็นไฟล์.exe ",
-      image: "/images/cookietool.png", // ต้องเป็นขนาด 940x400 px
+      image: "/images/cookietool.png",
       technologies: ["Python"],
       liveUrl: "https://your-ecommerce-demo.vercel.app",
       githubUrl: "https://github.com/pacharasesangngam/cookie_splitter",
