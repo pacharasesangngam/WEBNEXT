@@ -16,8 +16,8 @@ export default function Icon() {
     // ImageResponse JSX element
     <div
       style={{
-        fontSize: 24,
-        background: "black",
+        fontSize: 20,
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -26,9 +26,11 @@ export default function Icon() {
         color: "white",
         borderRadius: "8px",
         fontFamily: "sans-serif",
+        fontWeight: "bold",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
       }}
     >
-      <div style={{ color: "#3B82F6", fontWeight: "bold" }}>P</div>
+      <div>PS</div>
     </div>,
     // ImageResponse options
     {
