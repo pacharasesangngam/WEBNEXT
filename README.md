@@ -4,18 +4,6 @@
 
 ---
 
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Tech Stack](#tech-stack)
-4. [Getting Started](#getting-started)
-5. [Project Structure](#project-structure)
-6. [Customization](#customization)
-
-
----
-
 ## Overview
 
 **WEBNEXT** คือเทมเพลตเว็บไซต์ Portfolio ที่ปรับแต่งได้เต็มที่  
