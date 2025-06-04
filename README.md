@@ -6,7 +6,7 @@
 
 ## Overview
 
-**WEBNEXT** คือเทมเพลตเว็บไซต์ Portfolio ที่ปรับแต่งได้เต็มที่  
+**WEBNEXT** คือเเว็บไซต์ Portfolio ของ Pachara
 สร้างด้วย [Next.js](https://nextjs.org/) และ [Tailwind CSS](https://tailwindcss.com/)
 
 ---
