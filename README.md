@@ -1,6 +1,6 @@
 # WEBNEXT
 
-**เว็บไซต์ Portfolio สำเร็จรูปด้วย Next.js + Tailwind CSS**
+**เว็บไซต์ Portfolio  Next.js + Tailwind CSS**
 
 ---
 
@@ -12,11 +12,7 @@
 4. [Getting Started](#getting-started)
 5. [Project Structure](#project-structure)
 6. [Customization](#customization)
-7. [Environment Variables](#environment-variables)
-8. [Build & Deploy](#build--deploy)
-9. [Common Issues](#common-issues)
-10. [Useful Commands](#useful-commands)
-11. [Contact](#contact)
+
 
 ---
 
