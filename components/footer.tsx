@@ -122,7 +122,7 @@ export default function Footer() {
               <span className="text-white font-medium text-xl">{PERSONAL_INFO.name}</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Passionate Full-Stack Developer ready to contribute to innovative projects and grow with your team.
+              Passionate WEB Developer ready to contribute to innovative projects and grow with your team.
             </p>
             <div className="flex flex-col space-y-2">
               {/* Email copy/mailto */}
