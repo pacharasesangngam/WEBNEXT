@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { User, Mail, Phone, MapPin, Github, Linkedin } from "lucide-react"
-import { ResumeDownloadDialog } from "@/components/resume-download-dialog"
+
 
 const PERSONAL_INFO = {
   name: "Pachara",
@@ -122,7 +122,7 @@ export default function Footer() {
               <span className="text-white font-medium text-xl">{PERSONAL_INFO.name}</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Passionate WEB Developer ready to contribute to innovative projects and grow with your team.
+                “Learning never exhausts the mind.” — Leonardo da Vinci
             </p>
             <div className="flex flex-col space-y-2">
               {/* Email copy/mailto */}
@@ -177,9 +177,6 @@ export default function Footer() {
                 >
                   Contact
                 </button>
-              </li>
-              <li>
-                <ResumeDownloadDialog footerMode={true} buttonText="Resume" />
               </li>
             </ul>
           </div>
