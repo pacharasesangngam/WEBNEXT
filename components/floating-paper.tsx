@@ -34,7 +34,7 @@ export function FloatingPaper({ count = 5 }) {
   const [dimensions, setDimensions] = useState({ width: 1200, height: 800 })
   const [papers, setPapers] = useState<{ x: number[], y: number[], rotate: number[], duration: number }[]>([])
 
-  // Set dimensions and regenerate randoms on resize
+
   useEffect(() => {
     function updateSize() {
       setDimensions({
@@ -47,12 +47,12 @@ export function FloatingPaper({ count = 5 }) {
     return () => window.removeEventListener("resize", updateSize)
   }, [])
 
-  // Generate random papers when dimension or count changes
+
   useEffect(() => {
     setPapers(genRandoms(count, dimensions.width, dimensions.height))
   }, [count, dimensions.width, dimensions.height])
 
-  // Render nothing (avoid hydration mismatch) if papers are not ready
+
   if (papers.length === 0) return null
 
   return (

@@ -14,12 +14,11 @@ const PERSONAL_INFO = {
     "https://www.linkedin.com/in/%E0%B8%9E%E0%B8%8A%E0%B8%A3-%E0%B9%80%E0%B8%AA%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%A1-2a90b5312/",
 }
 
-// ปุ่ม Email ที่มี tooltip ตามเมาส์ (desktop), mobile เป็น mailto: เหมือนเดิม
+
 function CopyOrMailtoEmail() {
   const [isMobile, setIsMobile] = useState(false)
   const [copied, setCopied] = useState(false)
   const [showTooltip, setShowTooltip] = useState(false)
-  const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     setIsMobile(typeof window !== "undefined" && window.innerWidth < 768)
@@ -36,10 +35,6 @@ function CopyOrMailtoEmail() {
     }
   }
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setTooltipPos({ x: e.clientX + 14, y: e.clientY + 16 }) // offset ไม่ให้บัง pointer
-  }
-
   if (isMobile) {
     return (
       <a
@@ -53,11 +48,10 @@ function CopyOrMailtoEmail() {
   }
 
   return (
-    <span className="relative">
+    <span className="relative inline-flex items-center">
       <button
         onClick={handleCopy}
         onMouseEnter={() => setShowTooltip(true)}
-        onMouseMove={handleMouseMove}
         onMouseLeave={() => setShowTooltip(false)}
         className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors text-left"
         type="button"
@@ -71,41 +65,19 @@ function CopyOrMailtoEmail() {
           </span>
         )}
       </button>
-      {/* Tooltip แบบ custom ตามเมาส์ */}
       {showTooltip && !copied && (
         <span
-          className="pointer-events-none select-none text-xs z-50 tooltip-custom animate-tooltip-in"
-          style={{
-            position: "fixed",
-            left: tooltipPos.x,
-            top: tooltipPos.y,
-          }}
+          className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 bg-gray-900/95 px-3 py-2 rounded-lg text-xs text-white shadow-lg pointer-events-none flex items-center gap-2 whitespace-nowrap z-50 animate-tooltip-in"
         >
-          <span className="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="inline-block">
-              <rect x="3" y="5" width="12" height="12" rx="3" fill="#fff" fillOpacity="0.13" />
-              <rect x="7" y="1" width="10" height="12" rx="3" fill="#4fd1c5" fillOpacity="0.28" />
-              <rect x="7" y="1" width="10" height="12" rx="3" stroke="#4fd1c5" strokeWidth="1"/>
-            </svg>
-            <span>คัดลอก</span>
-          </span>
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="inline-block">
+            <rect x="3" y="5" width="12" height="12" rx="3" fill="#fff" fillOpacity="0.13" />
+            <rect x="7" y="1" width="10" height="12" rx="3" fill="#4fd1c5" fillOpacity="0.28" />
+            <rect x="7" y="1" width="10" height="12" rx="3" stroke="#4fd1c5" strokeWidth="1"/>
+          </svg>
+          <span>คัดลอก</span>
         </span>
       )}
-      {/* Custom tooltip and fade animation */}
       <style>{`
-        .tooltip-custom {
-          background: rgba(24,28,40,0.95);
-          backdrop-filter: blur(8px);
-          color: #e6f9f2;
-          border-radius: 10px;
-          padding: 7px 18px;
-          box-shadow: 0 4px 28px 0 rgba(75,220,250,0.08), 0 2px 8px 0 rgba(20,200,200,0.12);
-          border: 1px solid rgba(80,250,220,0.12);
-          transition: opacity .2s, transform .2s;
-          opacity: 0.97;
-          font-weight: 500;
-          pointer-events: none;
-        }
         .animate-tooltip-in {
           animation: tooltip-in .23s cubic-bezier(.33,1.19,.67,1) both;
         }
@@ -154,8 +126,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col space-y-2">
               {/* Email copy/mailto */}
-      
-
+              <CopyOrMailtoEmail />
               {/* โทรศัพท์ */}
               <a
                 href={`tel:${PERSONAL_INFO.phone}`}
@@ -235,7 +206,6 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                {/* ใน Connect ก็ใช้ปุ่ม copy แบบเดียวกันได้ */}
                 <CopyOrMailtoEmail />
               </li>
             </ul>

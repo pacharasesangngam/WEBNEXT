@@ -17,9 +17,7 @@ export default function Projects() {
         "โปรเเกรมเเยกคุกกีั Roblox เขียนด้วย Python เอาไว้ใช้เเยก user:password:cookie ออกมาเป็น 2 ไฟล์ 1.ไฟล์ user:password 2.ไฟล์ cookie โปรเเกรมสามารถดาวโหลดได้เป็นไฟล์.exe ",
       image: "/images/cookietool.png",
       technologies: ["Python"],
-      liveUrl: "https://your-ecommerce-demo.vercel.app",
       githubUrl: "https://github.com/pacharasesangngam/cookie_splitter",
-      downloadUrl: "/downloads/cookie_tool.zip",
       icon: Code,
       featured: true,
       complexity: 2,
@@ -31,10 +29,8 @@ export default function Projects() {
       description:
         "เป็น BOT ที่สามารถเติมเงิน เช็คช้อมูล ซื้อไอดี ดูประวัติต่างๆได้ สามารถเติมเงินด้วยซองอังเปา การทำงานในการเติมเงินจะเปิดหน้าเว็บเเล้วใส่เบอร์ให้ออโต",
       image: "/images/discordshop.png",
-      technologies: ["Python","Discord.js", "Node.js", "MongoDB"],
-      liveUrl: "https://your-taskapp-demo.vercel.app",
+      technologies: ["Python","Discord.js","SQLite3"],
       githubUrl: "https://github.com/yourusername/task-management",
-      downloadUrl: "/downloads/task-management.zip",
       icon: Code,
       featured: true,
       complexity: 4,
@@ -47,9 +43,7 @@ export default function Projects() {
       mediaType: "video",
       mediaUrl: "/videos/RobloxVid.mp4",
       technologies: ["React", "Node.js", "Html", "Css", "Js"],
-      liveUrl: "https://expo.dev/@yourusername/weather-app",
       githubUrl: "https://github.com/yourusername/weather-app",
-      downloadUrl: "/downloads/weather-app.zip",
       icon: Smartphone,
       featured: false,
       complexity: 5,
@@ -57,13 +51,11 @@ export default function Projects() {
       teamSize: 3,
     },
     {
-      title: "Data Visualization Dashboard",
-      description: "An interactive dashboard for visualizing complex datasets with charts and real-time analytics.",
-      image: "/images/data-dashboard.png",
-      technologies: ["Vue.js", "D3.js", "Python", "FastAPI"],
-      liveUrl: "https://your-dashboard-demo.vercel.app",
+      title: "เว็บดู LOG ตัวละคร Roblox",
+      description: " เป็นเว็บที่เอาไว้ติดตามข้อมูลของตัวละคร Roblox ที่เล่นอยู่ใช้ เเละติดตามเครื่อง PC เเต่ละเครื่อง ",
+      image: "/images/logweb.gif",
+      technologies: ["React", "Python", "Flask"],
       githubUrl: "https://github.com/yourusername/data-dashboard",
-      downloadUrl: "/downloads/data-dashboard.zip",
       icon: Database,
       featured: false,
       complexity: 4,
@@ -143,7 +135,6 @@ export default function Projects() {
                       )}
 
 
-                    {/* Overlay สำหรับตรวจสอบขนาดภาพ */}
                     <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                       <div className="bg-black/70 backdrop-blur-sm rounded px-2 py-1">
                         <span className="text-white text-xs">940×400</span>
@@ -199,29 +190,12 @@ export default function Projects() {
                   <div className="flex flex-wrap gap-3">
                     <Button
                       size="sm"
-                      className="bg-white hover:bg-gray-200 text-black"
-                      onClick={() => openLink(project.liveUrl)}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button
-                      size="sm"
                       variant="ghost"
                       className="text-white hover:bg-white/10 border border-white/20"
                       onClick={() => openLink(project.githubUrl)}
                     >
                       <Github className="w-4 h-4 mr-2" />
                       Code
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="text-white hover:bg-white/10 border border-white/20"
-                      onClick={() => openLink(project.downloadUrl)}
-                    >
-                      <Download className="w-4 h-4 mr-2" />
-                      Download
                     </Button>
                   </div>
                 </CardContent>

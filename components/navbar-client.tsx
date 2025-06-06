@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { User, Menu, Download, X } from "lucide-react"
+import { User, Menu, X, Download, Mail } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import type React from "react"
@@ -10,16 +10,14 @@ import { NAVIGATION_ITEMS, PERSONAL_INFO } from "@/lib/constants"
 
 export default function NavbarClient() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   const handleNavClick = (e: React.MouseEvent<HTMLButtonElement>, href: string) => {
     e.preventDefault()
     const elementId = href.replace("#", "")
     const element = document.getElementById(elementId)
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
     }
     setIsMobileMenuOpen(false)
   }
@@ -29,9 +27,10 @@ export default function NavbarClient() {
     setIsMobileMenuOpen(false)
   }
 
-  const openEmail = (email: string, subject?: string) => {
-    const mailtoLink = `mailto:${email}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`
-    window.open(mailtoLink, "_blank")
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(PERSONAL_INFO.email)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
     setIsMobileMenuOpen(false)
   }
 
@@ -42,64 +41,37 @@ export default function NavbarClient() {
         animate={{ y: 0 }}
         className="relative flex items-center px-6 py-4 backdrop-blur-sm border-b border-white/10"
       >
-        {/* Logo (Left) */}
         <Link href="/" className="flex items-center gap-2 z-10">
           <User className="w-6 h-6 text-white" />
           <span className="font-bold text-white">{PERSONAL_INFO.name}</span>
         </Link>
 
-        {/* Navigation (Center) */}
-        <div
-          className="
-            hidden md:flex items-center gap-8
-            absolute left-1/2 -translate-x-1/2
-          "
-        >
+
+        <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {NAVIGATION_ITEMS.map((item) => (
             <button
               key={item.name}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="
-                text-gray-300 hover:text-white transition-colors font-medium
-                bg-transparent border-0 p-0 m-0
-              "
+              className="text-gray-300 hover:text-white transition-colors font-medium bg-transparent border-0 p-0 m-0"
               style={{ background: "transparent" }}
             >
-              <span
-                className="
-                  text-lg
-                  relative inline-block
-                  after:content-[''] after:block after:h-[2px] after:bg-white
-                  after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300
-                  after:origin-left after:rounded-full after:mt-0 after:w-full
-                "
-              >
+              <span className="text-lg relative inline-block after:content-[''] after:block after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left after:rounded-full after:mt-0 after:w-full">
                 {item.name}
               </span>
             </button>
-
           ))}
         </div>
 
-        {/* Right: Resume & Hire Me */}
         <div className="hidden md:flex items-center gap-4 ml-auto z-10">
-          <Button
-            variant="ghost"
-            className="text-white hover:text-black bg-transparent hover:bg-white border border-white/20 hover:border-white/40 transition-all duration-300"
+          <button
             onClick={downloadResume}
+            className="group flex items-center gap-2 text-white hover:text-black bg-transparent hover:bg-white border border-white/20 hover:border-white/40 px-4 py-1.5 rounded-md transition-all duration-300"
           >
-            <Download className="w-4 h-4 mr-2" />
-            Resume
-          </Button>
-          <Button
-            className="bg-white hover:bg-gray-200 text-black"
-            onClick={() => openEmail(PERSONAL_INFO.email, "Let's work together!")}
-          >
-            Hire Me
-          </Button>
+            <Download className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+            <span className="font-medium">Download CV</span>
+          </button>
         </div>
 
-        {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="icon"
@@ -110,7 +82,7 @@ export default function NavbarClient() {
         </Button>
       </motion.nav>
 
-      {/* Mobile Menu */}
+
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -125,33 +97,29 @@ export default function NavbarClient() {
                 <button
                   key={item.name}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="
-                    text-gray-300 hover:text-white transition-colors font-medium
-                    relative
-                    after:content-[''] after:inline-block after:h-[2px] after:w-full after:bg-white
-                    after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300
-                    after:origin-left after:rounded-full after:mt-1 after:mx-auto
-                    px-0 py-1 w-full text-left
-                  "
+                  className="text-gray-300 hover:text-white transition-colors font-medium relative after:content-[''] after:inline-block after:h-[2px] after:w-full after:bg-white after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left after:rounded-full after:mt-1 after:mx-auto px-0 py-1 w-full text-left"
                 >
                   {item.name}
                 </button>
               ))}
+
+
               <div className="pt-4 border-t border-white/10 space-y-3">
-                <Button
-                  variant="ghost"
-                  className="w-full text-white hover:text-black bg-transparent hover:bg-white border border-white/20 hover:border-white/40 transition-all duration-300"
+                <button
                   onClick={downloadResume}
+                  className="group flex items-center gap-2 w-full text-left text-white hover:text-black bg-transparent hover:bg-white border border-white/20 hover:border-white/40 px-4 py-2 rounded-md transition-all duration-300"
                 >
-                  <Download className="w-4 h-4 mr-2" />
-                  Resume
-                </Button>
-                <Button
-                  className="w-full bg-white hover:bg-gray-200 text-black"
-                  onClick={() => openEmail(PERSONAL_INFO.email, "Let's work together!")}
+                  <Download className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+                  <span className="font-medium">Download CV</span>
+                </button>
+
+                <button
+                  onClick={copyEmail}
+                  className="group flex items-center gap-2 w-full text-left text-white hover:text-black bg-transparent hover:bg-white border border-white/20 hover:border-white/40 px-4 py-2 rounded-md transition-all duration-300"
                 >
-                  Hire Me
-                </Button>
+                  <Mail className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
+                  <span className="font-medium">{copied ? "Copied!" : "Copy Email"}</span>
+                </button>
               </div>
             </div>
           </motion.div>

@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og"
 export const runtime = "edge"
 
 // Image metadata
-export const alt = "Pachara - Full Stack Developer"
+export const alt = "Pachara - WEB Developer"
 export const size = {
   width: 1200,
   height: 630,

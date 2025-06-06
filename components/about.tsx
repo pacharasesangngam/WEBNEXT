@@ -15,7 +15,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">About Me</h2>
-            {/* Gradient Divider */}
+
 
           </motion.div>
 
@@ -56,12 +56,8 @@ export default function About() {
                   <strong>Bangkok university</strong>
                 </p>
                 <p className="text-gray-400 mb-4">Technology and Innovation faculty Major of Computer Science</p>
-                {/* <p className="text-gray-300">
-                  Hands-on experience with Node.js, React, Python, UX/UI design.
-                </p> */}
               </motion.div>
 
-              {/* Interests Card */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
