@@ -9,16 +9,6 @@
 **WEBNEXT** คือเเว็บไซต์ Portfolio ของ Pachara
 สร้างด้วย [Next.js](https://nextjs.org/) และ [Tailwind CSS](https://tailwindcss.com/)
 
----
-
-## Features
-
-- สวย ทันสมัย ปรับแต่งง่าย
-- รองรับ Responsive/Mobile
-- เปลี่ยนธีม/สี/รูปแบบได้ง่าย
-- เพิ่มโปรเจกต์หรือ Section ใหม่ได้อิสระ
-
----
 
 ## Tech Stack
 
